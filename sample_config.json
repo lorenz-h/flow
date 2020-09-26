@@ -1,0 +1,46 @@
+{
+  "vehicles": [
+    {
+      "name": "BMW i3",
+      "vin": "your_vin",
+      "alias": "i32020",
+      "manufacturer": "bmw",
+      "rfid_token": "your_token",
+      "charge_management": true
+    },
+    {
+      "name": "Audi E-Tron",
+      "vin": "your_vin",
+      "alias": "etron2030",
+      "manufacturer": "audi",
+      "rfid_token": "your_token",
+      "charge_management": false
+    }
+  ],
+  "modules": {
+    "keba_rest": {
+      "host": "192.168.178.55"
+    },
+    "billing": {
+
+    },
+    "manager": {
+        "powerwall_host": "https://192.168.178.56",
+        "meters": {
+            "house": {"type": "consumer"},
+            "solar": {"type": "producer"},
+            "powerwall": {"type": "dual"},
+            "wallbox": {"type": "consumer"},
+            "grid": {"type": "dual"}
+        }
+    },
+    "connected_drive_cache": {
+      "credentials": {
+        "user": "your_user",
+        "pwd": "your_password",
+        "region": "rest_of_world"
+      },
+      "max_staleness": 600
+    }
+  }
+}

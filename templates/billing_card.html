@@ -1,0 +1,36 @@
+<div class="column is-full is-half-tablet is-one-third-desktop">
+    <div class="box has-background-white has-text-black">
+        <div class="title">Abrechnung</div>
+        <form action="/billing/downloads" method="get">
+            <div class="field">
+                <label class="label">RFID Tag</label>
+                <div class="control">
+                    <input name="rfid" class="input" type="text" value="04d8ce9ad8648000">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Monat</label>
+                <div class="control">
+                    <input name="month" class="input" type="text" value="" placeholder="Monat als Zahl">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Jahr</label>
+                <div class="control">
+                    <input name="year" class="input" type="text" value="" placeholder="Jahr als Zahl">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Arbeitspreis</label>
+                <div class="control">
+                    <input name="euros_per_kWh" class="input" type="text" value="" placeholder="Arbeitspreis Netto in Euro/kWh">
+                </div>
+            </div>
+            <div class="control">
+                <input class="button is-info" type="submit" value="Erstellen">
+            </div>
+        </form>
+
+
+    </div>
+</div>

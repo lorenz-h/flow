@@ -1,0 +1,62 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../lib/bulma-0.9.0/css/bulma.css">
+</head>
+<body>
+<section class="section">
+    <style>
+        th, td {
+            border-left: none !important;
+            border-right: none !important;
+            text-align: left !important;
+        }
+
+        spacer {
+            display: block;
+            width: 100%;
+            height: 1em;
+        }
+    </style>
+    <h1 class="Title">Abrechnung Ladekosten</h1>
+    <h1 class="Subtitle">Zeitraum: {{ start_day }} bis {{ end_day }}</h1>
+    <spacer></spacer>
+    <p>Name</p>
+    <p>Adresse</p>
+    <spacer></spacer>
+    <p>Arbeitspreis: {{ netto_euros_per_kWh }}&euro;/kWh netto - {{ brutto_euros_per_kWh }}&euro;/kWh
+        brutto</p>
+    <table class="table is-striped is-fullwidth">
+        <thead>
+        <th>Beginn</th>
+        <th>Ende</th>
+        <th>Energieabgabe [kWh]</th>
+        <th>Kosten [&euro;]</th>
+        <th>Session UID</th>
+        </thead>
+        <tfoot>
+        <tr>
+            <th></th>
+            <th>Summe</th>
+            <th>{{ total_kWh }}kWh</th>
+            <th>{{ total_cost }}&euro;</th>
+            <th></th>
+        </tr>
+        </tfoot>
+        <tbody>
+        {% for session in sessions %}
+            <tr>
+                <td>{{ session['started'] }}</td>
+                <td>{{ session['ended'] }}</td>
+                <td>{{ session['energy'] }}</td>
+                <td>{{ session['cost'] }}</td>
+                <td>{{ session['uid'] }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+</body>
+</html>

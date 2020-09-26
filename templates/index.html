@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html class="has-background-grey-dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale = 1, maximum-scale = 1, user-scalable = no">
+    <meta name="apple-mobile-web-app-title" content="Flow"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+    <link rel="apple-touch-icon" href="apple-touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="resources/apple-touch-icon/icon_76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="resources/apple-touch-icon/icon_120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="resources/apple-touch-icon/icon_152.png">
+
+    <title>Flow</title>
+    <link rel="stylesheet" href="lib/bulma-0.9.0/css/bulma.css">
+    <link rel="stylesheet" href="lib/Chart.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/powerflow.css">
+    <link rel="stylesheet" href="css/vehicle_card.css">
+</head>
+<body>
+<section class="section" style="min-height:100vh">
+    <div class="container">
+        <div class="columns is-multiline" style="align-items: stretch">
+
+            {% include 'power_card.html' %}
+
+            {% include 'wallbox_card.html' %}
+
+            {% for vehicle in vehicles %}
+                {% include 'vehicle_card.html' %}
+            {% endfor %}
+
+            {% include 'billing_card.html' %}
+
+            {% include 'settings_card.html' %}
+
+        </div>
+    </div>
+</section>
+<footer class="footer has-background-dark" style="padding: 1rem 1rem 1rem">
+    <div class="content">
+        <button id="toggle-settings-visibility" class="button is-black">Einstellungen Ein/Ausblenden</button>
+    </div>
+</footer>
+<script src="lib/Chart.bundle.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/vehicles.js"></script>
+<script src="js/wallbox.js"></script>
+<script src="js/power.js"></script>
+<script>
+    vehicleCards = createVehicleCardObjects();
+    wallbox = new WallboxCard();
+    updatePowerReadings();
+
+    window.setInterval(function () {
+        vehicleCards.forEach(card => card.update());
+
+    }, config["vehicle_refresh_interval"]);
+
+    window.setInterval(function () {
+        wallbox.update();
+    }, config["wallbox_refresh_interval"]);
+
+    window.setInterval(function () {
+        updatePowerReadings();
+    }, config["power_refresh_interval"]);
+
+</script>
+<script src="js/utils.js"></script>
+</body>
+</html>

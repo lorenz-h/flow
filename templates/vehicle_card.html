@@ -1,0 +1,19 @@
+<div class="column is-full is-half-tablet is-one-third-desktop vehicle-info-card"
+     data-alias="{{ vehicle['alias'] }}"
+     data-name="{{ vehicle['name'] }}"
+     data-manufacturer="{{ vehicle['manufacturer'] }}"
+     data-chargemanagement="{{ vehicle["charge_management"] }}">
+
+    <div class="box has-background-white has-text-black vehicle-box">
+        <img class="tsl-bg vehicle-thumbnail" src="/{{ vehicle['manufacturer'] }}/thumbnail?vehicle={{ vehicle['alias'] }}">
+        <img class="vehicle-manual-refresh" src="/resources/baseline_refresh_white_48dp.png">
+        <div class="title">
+            <span class="vehicle-name">{{ vehicle["name"] }}</span>
+            <span class="is-pulled-right">%</span>
+            <span class="is-pulled-right vehicle-soc">0</span>
+        </div>
+        <div>Reichweite: <span class="vehicle-range">0</span>km</div>
+        <div>Status: <span class="vehicle-status">Unbekannt</span></div>
+        <div>Zuletzt Aktualisiert: <span class="vehicle-last-update">Unbekannt</span></div>
+    </div>
+</div>

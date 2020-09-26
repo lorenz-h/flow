@@ -1,0 +1,19 @@
+.vehicle-manual-refresh {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    height: 2em;
+    cursor: pointer;
+}
+
+.vehicle-thumbnail {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.vehicle-box {
+    position:relative;
+    overflow:hidden;
+    padding-top:110%
+}

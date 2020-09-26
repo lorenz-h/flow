@@ -1,0 +1,34 @@
+<div id="power-box" class="column is-full is-full-tablet is-two-thirds-desktop has-text-white">
+    <div class="box">
+        <h1 class="title">Überblick</h1>
+        <table class="table is-fullwidth">
+            <tbody>
+            <tr>
+                <td><h2 class="is-size-4">Solaranlage:</h2></td>
+                <td class="has-text-right"><h2 class="is-size-4"><span id="pr-solar">Unbekannt</span> kW</h2></td>
+            </tr>
+            <tr>
+                <td><h2 class="is-size-4">Hausverbrauch:</h2></td>
+                <td class="has-text-right"><h2 class="is-size-4"><span id="pr-house">Unbekannt</span> kW</h2></td>
+            </tr>
+            <tr>
+                <td><h2 class="is-size-4">Wallbox:</h2></td>
+                <td class="has-text-right"><h2 class="is-size-4"><span id="pr-wallbox">Unbekannt</span> kW</h2></td>
+            </tr>
+            <tr>
+                <td><h2 class="is-size-4">Powerwall (<span class="pw-level-indicator"></span>%):</h2></td>
+                <td class="has-text-right"><h2 class="is-size-4"><span id="pr-battery">Unbekannt</span> kW</h2></td>
+            </tr>
+            <tr>
+                <td><h2 class="is-size-4">Netz:</h2></td>
+                <td class="has-text-right"><h2 class="is-size-4"><span id="pr-grid">Unbekannt</span> kW</h2></td>
+            </tr>
+            </tbody>
+
+        </table>
+        <div class="chart-container" style="position: relative; height:50vh; width:100%;">
+            <canvas id="powerHistoryChart"></canvas>
+        </div>
+
+    </div>
+</div>

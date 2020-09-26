@@ -1,0 +1,41 @@
+<div id="wallbox-info-box" class="column is-full is-half-tablet is-one-third-desktop">
+    <div class="box" style="position: relative; overflow: hidden; padding-top: 110%">
+
+        <img class="tsl-bg" src="resources/wallbox.png" style="position: absolute; left: 0; top:0;">
+        <div class="title"><span>Wallbox</span><span class="is-pulled-right"> kW</span><span
+                class="is-pulled-right wb-momentary-power">0</span></div>
+        <div>
+            <p>Verbundenes Fahrzeug: <span class="vehicle-name-text">Unbekannt</span></p>
+            <p>Aktuelle Abgabe: <span class="wb-session-energy">Unbekannt</span> kWh</p>
+            <form>
+                <div class="field">
+                    <input id="wallbox-mode-toggle" type="checkbox" name="switchRoundedInfo"
+                           class="switch is-rounded is-info" checked="checked">
+                    <label for="wallbox-mode-toggle">Automatikmodus</label>
+                </div>
+            </form>
+        </div>
+        <div>
+            <div id="wallbox-manual-charge-menu" class="is-hidden">
+                <label class="label">Ladestrom</label>
+
+                <div class="field has-addons">
+                    <div class="control">
+                        <div class="select">
+                            <select id="wallbox-manual-current">
+                                <option>0</option>
+                                <option>4</option>
+                                <option>6</option>
+                                <option>11</option>
+                                <option>23</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p class="control"><a class="button is-static">kW</a></p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
